@@ -1,0 +1,60 @@
+{
+    "algo": "cryptonight-upx/2",
+    "api": {
+        "port": 45678,
+        "access-token": "mytokendid",
+        "id": "IDS",
+        "worker-id": "WorkerID",
+        "ipv6": false,
+        "restricted": false
+    },
+    "asm": true,
+    "autosave": true,
+    "background": false,
+    "colors": true,
+    "cpu-affinity": false,
+    "cpu-priority": null,
+    "donate-level": 1,
+    "huge-pages": true,
+    "hw-aes": null,
+    "log-file": null,
+    "max-cpu-usage": 50,
+    "av": 1,
+    "pools": [
+        {
+            "url": "sg.uplexa.herominers.com:10470",
+            "user": "UPX1Tf6n3zfWEGJBp2ZnwgGjkHA83GUyAe9VtkteDu9WZPFgQw9E3Db3cGZviePN5P94b3R91fAghgcL5vXR5kQo9fBzPtSkvB",
+            "pass": "TIRTAGTXMRig",
+            "rig-id": null,
+            "nicehash": false,
+            "keepalive": false,
+            "variant": 1,
+            "tls": false,
+            "tls-fingerprint": null
+        }
+    ],
+        "print-time": 60,
+    "retries": 5,
+    "retry-pause": 5,
+    "safe": false,
+    "threads": [
+        {
+            "low_power_mode": 1,
+            "affine_to_cpu": 0,
+            "asm": true
+        },
+        {
+            "low_power_mode": 1,
+            "affine_to_cpu": 2,
+            "asm": true
+        },
+        {
+            "low_power_mode": 1,
+            "affine_to_cpu": 4,
+            "asm": true
+        }
+    ],
+    "user-agent": null,
+    "watch": false
+    
+}
