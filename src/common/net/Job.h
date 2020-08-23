@@ -41,8 +41,6 @@ namespace xmrig {
 class Job
 {
 public:
-    // Max blob size is 84 (75 fixed + 9 variable), aligned to 96. https://github.com/xmrig/xmrig/issues/1 Thanks fireice-uk.
-    // SECOR increase requirements for blob size: https://github.com/xmrig/xmrig/issues/913
     static constexpr const size_t kMaxBlobSize = 128;
 
     Job();
