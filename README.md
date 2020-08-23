@@ -12,7 +12,7 @@ TirtaXMRig-UPX is a unrestircted version high performance uPlexa (UPX) CPU miner
 * Git URL: https://github.com/TIRTAGT-DEV/TirtaXMRig-UPX.git
 * Clone with `sudo git clone https://github.com/TIRTAGT-DEV/TirtaXMRig-UPX.git`
  
-[Build instructions](https://github.com/TIRTAGT-DEV/TirtaXMRig-UPX/Guide/build/readme.md).
+[Build instructions](https://github.com/TIRTAGT-DEV/TirtaXMRig-UPX/blob/master/Guide/build/readme.md).
 
 ## How to use
 Directly configure the app using the available command line options or the `Config.KenF` file on the build folde then execute the app and it should start running.
