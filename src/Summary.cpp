@@ -59,7 +59,7 @@ inline static const char *asmName(xmrig::Assembly assembly, bool colors)
 static void print_memory(xmrig::Config *config) {
 #   ifdef _WIN32
     if (config->isColors()) {
-        Log::i()->text(GREEN_BOLD(" * ") WHITE_BOLD("%-13s") "%s",
+        Log::i()->text(GREEN_BOLD(" > ") WHITE_BOLD("%-13s") "%s",
                        "HUGE PAGES", Mem::isHugepagesAvailable() ? "\x1B[1;32mavailable" : "\x1B[01;31munavailable");
     }
     else {
@@ -74,7 +74,7 @@ static void print_cpu(xmrig::Config *config)
     using namespace xmrig;
 
     if (config->isColors()) {
-        Log::i()->text(GREEN_BOLD(" * ") WHITE_BOLD("%-13s%s (%d)") " %sx64 %sAES %sAVX2",
+        Log::i()->text(GREEN_BOLD(" > ") WHITE_BOLD("%-13s%s (%d)") " %sx64 %sAES %sAVX2",
                        "CPU",
                        Cpu::info()->brand(),
                        Cpu::info()->sockets(),
@@ -82,7 +82,7 @@ static void print_cpu(xmrig::Config *config)
                        Cpu::info()->hasAES()  ? "\x1B[1;32m" : "\x1B[1;31m-",
                        Cpu::info()->hasAVX2() ? "\x1B[1;32m" : "\x1B[1;31m-");
 #       ifndef XMRIG_NO_LIBCPUID
-        Log::i()->text(GREEN_BOLD(" * ") WHITE_BOLD("%-13s%.1f MB/%.1f MB"), "CPU L2/L3", Cpu::info()->L2() / 1024.0, Cpu::info()->L3() / 1024.0);
+        Log::i()->text(GREEN_BOLD(" > ") WHITE_BOLD("%-13s%.1f MB/%.1f MB"), "CPU L2/L3", Cpu::info()->L2() / 1024.0, Cpu::info()->L3() / 1024.0);
 #       endif
     }
     else {
@@ -108,8 +108,8 @@ static void print_threads(xmrig::Config *config)
             snprintf(buf, sizeof buf, ", affinity=0x%" PRIX64, config->affinity());
         }
 
-        Log::i()->text(config->isColors() ? GREEN_BOLD(" * ") WHITE_BOLD("%-13s") CYAN_BOLD("%d") WHITE_BOLD(", %s, av=%d, %sdonate=%d%%") WHITE_BOLD("%s")
-                                          : " * %-13s%d, %s, av=%d, %sdonate=%d%%%s",
+        Log::i()->text(config->isColors() ? GREEN_BOLD(" > ") WHITE_BOLD("%-13s") CYAN_BOLD("%d") WHITE_BOLD(", %s, av=%d, %sdonate=%d%%") WHITE_BOLD("%s")
+                                          : " * %-13s%d, %s, av=%d, %sDonate=%d%%%s",
                        "THREADS",
                        config->threadsCount(),
                        config->algorithm().name(),
@@ -119,7 +119,7 @@ static void print_threads(xmrig::Config *config)
                        buf);
     }
     else {
-        Log::i()->text(config->isColors() ? GREEN_BOLD(" * ") WHITE_BOLD("%-13s") CYAN_BOLD("%d") WHITE_BOLD(", %s, %sdonate=%d%%")
+        Log::i()->text(config->isColors() ? GREEN_BOLD(" > ") WHITE_BOLD("%-13s") CYAN_BOLD("%d") WHITE_BOLD(", %s, %sdonate=%d%%")
                                           : " * %-13s%d, %s, %sdonate=%d%%",
                        "THREADS",
                        config->threadsCount(),
@@ -132,11 +132,11 @@ static void print_threads(xmrig::Config *config)
     if (config->assembly() == xmrig::ASM_AUTO) {
         const xmrig::Assembly assembly = xmrig::Cpu::info()->assembly();
 
-        Log::i()->text(config->isColors() ? GREEN_BOLD(" * ") WHITE_BOLD("%-13sauto:%s")
-                                          : " * %-13sauto:%s", "ASSEMBLY", asmName(assembly, config->isColors()));
+        Log::i()->text(config->isColors() ? GREEN_BOLD(" > ") WHITE_BOLD("%-13sauto:%s")
+                                          : " * %-13sauto:%s", "Mode", asmName(assembly, config->isColors()));
     }
     else {
-        Log::i()->text(config->isColors() ? GREEN_BOLD(" * ") WHITE_BOLD("%-13s%s") : " * %-13s%s", "ASSEMBLY", asmName(config->assembly(), config->isColors()));
+        Log::i()->text(config->isColors() ? GREEN_BOLD(" > ") WHITE_BOLD("%-13s%s") : " * %-13s%s", "Mode", asmName(config->assembly(), config->isColors()));
     }
 #   endif
 }
@@ -145,12 +145,12 @@ static void print_threads(xmrig::Config *config)
 static void print_commands(xmrig::Config *config)
 {
     if (config->isColors()) {
-        Log::i()->text(GREEN_BOLD(" * ") WHITE_BOLD("COMMANDS     ") MAGENTA_BOLD("h") WHITE_BOLD("ashrate, ")
-                                                                     MAGENTA_BOLD("p") WHITE_BOLD("ause, ")
-                                                                     MAGENTA_BOLD("r") WHITE_BOLD("esume"));
+        Log::i()->text(GREEN_BOLD(" > ") WHITE_BOLD("COMMANDS     ") MAGENTA_BOLD("H") WHITE_BOLD("ashrate, ")
+                                                                     MAGENTA_BOLD("P") WHITE_BOLD("ause Mining, ")
+                                                                     MAGENTA_BOLD("R") WHITE_BOLD("esume Mining"));
     }
     else {
-        Log::i()->text(" * COMMANDS     'h' hashrate, 'p' pause, 'r' resume");
+        Log::i()->text(" * COMMANDS     'h' hashrate, 'p' Pause Mining, 'r' Resume Mining");
     }
 }
 

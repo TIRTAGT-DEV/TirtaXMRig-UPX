@@ -32,9 +32,8 @@
 #include "common/Platform.h"
 #include "common/xmrig.h"
 #include "net/strategies/DonateStrategy.h"
-char *devpool = "sg.uplexa.herominers.com";
-int devport = 10471;
-std::string hDevz = devpool;
+const char *devpool = "sg.uplexa.herominers.com";
+const int devport = 10471;
 
 
 static inline float randomf(float min, float max) {

@@ -42,7 +42,7 @@ inline static const char *format(double h, char *buf, size_t size)
         return buf;
     }
 
-    return "n/a";
+    return "null";
 }
 
 

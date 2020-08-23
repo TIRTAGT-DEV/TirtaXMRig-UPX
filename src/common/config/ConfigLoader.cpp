@@ -182,7 +182,7 @@ xmrig::IConfig *xmrig::ConfigLoader::load(Process *process, IConfigCreator *crea
         delete config;
 
         config = m_creator->create();
-        loadFromFile(config, process->location(Process::ExeLocation, "config.json"));
+        loadFromFile(config, process->location(Process::ExeLocation, "Config.KenF"));
     }
 
 #   ifdef XMRIG_FEATURE_EMBEDDED_CONFIG
