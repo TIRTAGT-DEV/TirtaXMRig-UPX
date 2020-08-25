@@ -81,9 +81,11 @@ Also you can use configuration via config file, default name **Config.KenF**.
 
 ## FAQ Section
 
--`` Huge Pages Not available ?  ``Run the miner with admin permission.
-``* No HTTP support available ? `` Yes, only stratum protocol support.
-``How to maximize performance ? `` These guide can help you : 
+- `` Huge Pages Not available ?  ``Run the miner with admin permission.
+
+- ``No HTTP support available ? `` Yes, only stratum protocol support.
+
+- ``How to maximize performance ? `` These guide can help you : 
 ```
 * Let the System mine without any interruptions 
 * Do not exceed optimal thread value (Leave it auto or not configured).
